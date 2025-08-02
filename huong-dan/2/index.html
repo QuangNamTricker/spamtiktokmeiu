@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hướng Dẫn Chi Tiết - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .main-header {
+      background-color: #ff0050;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+      font-size: 1.8rem;
+    }
+    
+    .main-nav {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s;
+    }
+    
+    .main-nav a:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .guide-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      /* background: ; */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    
+    .guide-header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ff0050;
+      padding-bottom: 20px;
+    }
+    
+    .guide-header h1 {
+      color: #ff0050;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .tab-container {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab-btn {
+      padding: 10px 20px;
+      background: #f1f1f1;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
+    
+
+
+
+
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .hero {
+      background: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?fit=crop&w=1500&q=80') center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #00ffcc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid #00ffcc;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      color: #00ffcc;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Phần CSS chung giữ nguyên từ các trang trước */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* ... (Giữ nguyên phần header và footer giống các trang khác) ... */
+    
+    .rules-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .rules-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .rules-header h1 {
+      color: #00ffcc;
+      font-size: 2.5em;
+    }
+    
+    .rule-category {
+      margin-bottom: 30px;
+      border-left: 3px solid #00ffcc;
+      padding-left: 15px;
+    }
+    
+    .rule-category h2 {
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .rule-category h2:hover {
+      padding-left: 10px;
+    }
+    
+    .rule-category h2 i {
+      margin-right: 10px;
+    }
+    
+    .rule-list {
+      margin-top: 15px;
+      padding-left: 25px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    
+    .rule-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .rule-list li::before {
+      content: '•';
+      color: #00ffcc;
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    
+    .penalty {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      border-left: 3px solid red;
+    }
+    
+    .penalty strong {
+      color: #ff5555;
+    }
+    
+    .important-note {
+      background: rgba(0, 255, 204, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: center;
+      border: 1px dashed #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .rules-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .rules-header h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    .tab-btn.active {
+      background: #ff0050;
+      color: white;
+    }
+    
+    .tab-btn:hover {
+      background: #ddd;
+    }
+    
+    .tab-btn.active:hover {
+      background: #1622c7;
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 20px;
+      /* background: #fafafa; */
+      border-radius: 0 0 5px 5px;
+      animation: fadeIn 0.5s;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    
+    .step {
+      margin-bottom: 20px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #ff0050;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .step-content {
+      padding: 15px;
+      /* background-color: white; */
+      border-left: 3px solid #ff0050;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .note-box {
+      /* background-color: #fff8e6; */
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .note-box h3 {
+      margin-top: 0;
+      color: #ff9800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .example-box {
+      /* background-color: #f0f7ff; */
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .example-box h3 {
+      margin-top: 0;
+      color: #2196F3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .warning {
+      color: #ff0050;
+      font-weight: bold;
+    }
+    
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: #ff0050;
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #ff0050;
+        padding: 20px;
+        gap: 15px;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .guide-container {
+        margin: 20px 15px;
+        padding: 20px;
+      }
+      
+      .tab-container {
+        flex-direction: column;
+      }
+      
+      .tab-btn {
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="guide-container">
+  <div class="guide-header">
+    <h1><i class="fas fa-book"></i> HƯỚNG DẪN CHI TIẾT</h1>
+    <p>Hướng dẫn từng bước thực hiện công việc</p>
+  </div>
+  
+  <div class="tab-container">
+    <button class="tab-btn active" onclick="openTab(event, 'lam-viec')">Cách Làm</button>
+    <button class="tab-btn" onclick="openTab(event, 'nop-bai')">Cách Nộp</button>
+    <button class="tab-btn" onclick="openTab(event, 'luu-y')">Lưu Ý</button>
+  </div>
+  
+  <div id="lam-viec" class="tab-content active">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Các Bạn Vào Nhóm Điểm Danh</h3>
+        <p>Điểm danh để lấy STT tiếp theo của bạn. STT này sẽ dùng cho các bước sau.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Vào Nhóm Lấy Bài</h3>
+        <p>Copy bài mẫu từ nhóm và thay STT trong bài bằng STT bạn đã điểm danh ở B1.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Tìm Video và Comment trên TikTok</h3>
+        <p>Tìm các video về mua bán, chọn comment thỏa các điều kiện:</p>
+        <ul>
+          <li>Comment dưới 24h</li>
+          <li>Người comment là nữ</li>
+          <li>Comment đó có dưới 3 tim</li>
+        </ul>
+        <p>Tim comment và Rep comment bằng nội dung bạn đã copy ở B2 và chụp ảnh lại.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Follow và Xác Nhận</h3>
+        <p>Vào TCN (Trang Cá Nhân) của người đó, follow và chụp ảnh lại.</p>
+        <p><strong>=> THẾ LÀ BẠN ĐÃ HOÀN THÀNH 1SP (1RK)!</strong></p>
+      </div>
+    </div>
+    
+    <div class="note-box">
+      <h3><i class="fas fa-exclamation-circle"></i> LƯU Ý QUAN TRỌNG</h3>
+      <p class="warning">CÁC BẠN ĐỌC KỸ NỘI QUY ĐỂ LÀM TRÁNH MẤT CÔNG LÀM NHƯNG MÀ BỊ LOẠI SP LỖI NHÉ</p>
+    </div>
+  </div>
+  
+  <div id="nop-bai" class="tab-content">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Vào Nhóm "NỘP"</h3>
+        <p>Tìm đến nhóm nộp bài để bắt đầu quy trình nộp sản phẩm.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Xin Nộp Bài</h3>
+        <p>Nhắn tin "XN" nếu hiện tại chưa có ai nộp để xin nộp.</p>
+        <p>Nếu có người đang nộp thì chờ họ nộp xong rồi mới NT "XN" để xin nộp.</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Gửi Hình Ảnh</h3>
+        <p>Gửi những hình ảnh sản phẩm đã làm lên nhóm (2 ảnh tính 1sp/1rk).</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Chốt Sản Phẩm</h3>
+        <p>Nhắn tin theo cú pháp:</p>
+        <p>"Tên TK TELE - Số Sản Phẩm Hiện Tại Nộp (Lần Nộp Thứ) Thời gian làm và Link video đã comment"</p>
+        <p>Ví dụ: Nếu bạn làm từ 12h-14h thì ghi 12h-14h</p>
+      </div>
+    </div>
+    
+    <div class="example-box">
+      <h3><i class="fas fa-lightbulb"></i> VÍ DỤ CỤ THỂ</h3>
+      <p>Nộp L1: Admin - 100sp (L1)<br>5h-7h  https://www.tiktok.com/</p>
+      <p>Nộp L2: Admin - 50sp (L2)<br>12h-13h  https://www.tiktok.com/</p>
+      <p>...</p>
+    </div>
+  </div>
+  
+  <div id="luu-y" class="tab-content">
+    <div class="note-box">
+      <h3><i class="fas fa-exclamation-triangle"></i> LƯU Ý KHI LÀM VIỆC</h3>
+      <ul>
+        <li>Đảm bảo tuân thủ thời gian làm việc từ 4h đến 23h59</li>
+        <li>Chỉ làm với tài khoản nữ, độ tuổi 25-45</li>
+        <li>Kiểm tra kỹ comment trước khi rep (dưới 24h, dưới 3 tim)</li>
+        <li>Follow ngay sau khi rep comment</li>
+      </ul>
+    </div>
+    
+    <div class="note-box">
+      <h3><i class="fas fa-ban"></i> NHỮNG ĐIỀU CẤM</h3>
+      <ul>
+        <li>Không rep khách không avatar, ảo hoặc dân tộc</li>
+        <li>Không nộp bài quá 24h sau khi làm</li>
+        <li>Không tự ý thay đổi nội dung bài mẫu</li>
+      </ul>
+    </div>
+    
+    <div class="note-box">
+      <h3><i class="fas fa-coins"></i> QUY ĐỊNH TÍNH LƯƠNG</h3>
+      <ul>
+        <li>300Đ/1RK đối với sản phẩm đạt chuẩn</li>
+        <li>Trừ 50% lương nếu rep ảo hoặc nam</li>
+        <li>Không tính lương nếu rep chèn hoặc quá 24h</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 Copyright By Từ Quang Nam. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script>
+  function openTab(evt, tabName) {
+    // Hide all tab contents
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+      tabContents[i].classList.remove("active");
+    }
+    
+    // Remove active class from all tab buttons
+    const tabButtons = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].classList.remove("active");
+    }
+    
+    // Show the current tab and add active class to the button
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('active');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('mobileMenuBtn');
+    
+    if (!nav.contains(event.target) && event.target !== btn) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+</body>
+</html>

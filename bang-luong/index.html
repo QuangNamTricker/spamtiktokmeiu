@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Lương - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+
+
+
+<div class="salary-container">
+  <div class="salary-header">
+    <h1><i class="fas fa-money-bill-wave"></i> Bảng Lương Thành Viên <br><br>Nhánh 1: MEIU</h1>
+    <p>Xem chi tiết thu nhập của bạn theo từng ngày</p>
+  </div>
+
+  <div class="date-selector">
+    <label for="date-select">Chọn ngày:</label>
+    <select id="date-select">
+      <option value="01/08/2025" selected>01/08/2025</option>
+    </select>
+
+  </div>
+
+  <table class="salary-table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên Thành Viên</th>
+        <th>Số Lượng</th>
+        <th>Đơn Giá</th>
+        <th>Thành Tiền</th>
+        <th>Trạng Thái</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="summary"></div>
+</div>
+
+<footer>
+  <div>© 2025 𝑺𝑷𝑨𝑴 𝑻𝑰𝑲 𝑻𝑶𝑲 𝑺𝟎𝟐 - 𝑳𝑶𝑷𝑬𝑹𝑺🐣. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+<script>
+  
+  const tbody = document.querySelector('.salary-table tbody');
+  const summary = document.querySelector('.summary');
+  const dateSelect = document.getElementById('date-select');
+  let salaryData = {};
+
+  function renderSalaryTable(data) {
+    tbody.innerHTML = '';
+    let total = 0, totalQty = 0, paid = 0, pending = 0;
+
+    data.forEach((item, index) => {
+      const amount = item.quantity * item.unitPrice;
+      total += amount;
+      totalQty += item.quantity;
+      if (item.status === "Đã thanh toán") paid += amount;
+      if (item.status === "Chờ xử lý") pending += amount;
+
+      const color = item.status === "Đã thanh toán" ? '#00ffcc' : item.status === "Chờ xử lý" ? '#ffff00' : '#ff0000';
+      tbody.innerHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>${item.unitPrice.toLocaleString()}đ</td>
+          <td class="highlight">${amount.toLocaleString()}đ</td>
+          <td><span style="color: ${color};">${item.status}</span></td>
+        </tr>`;
+    });
+
+    summary.innerHTML = `
+      <div class="summary-item">Tổng số lượng: <span>${totalQty}</span></div>
+      <div class="summary-item">Tổng thành tiền: <span>${total.toLocaleString()}đ</span></div>
+      <div class="summary-item">Đã thanh toán: <span>${paid.toLocaleString()}đ</span></div>
+      <div class="summary-item">Chờ xử lý: <span>${pending.toLocaleString()}đ</span></div>`;
+  }
+
+  async function fetchSalaryData() {
+    try {
+      const res = await fetch('../data/meiu.json');
+      salaryData = await res.json();
+      const defaultDate = dateSelect.value;
+      renderSalaryTable(salaryData[defaultDate] || []);
+    } catch (err) {
+      console.error("Lỗi khi tải dữ liệu:", err);
+      tbody.innerHTML = '<tr><td colspan="6">Không thể tải dữ liệu</td></tr>';
+    }
+  }
+
+  dateSelect.addEventListener('change', () => {
+    const selected = dateSelect.value;
+    renderSalaryTable(salaryData[selected] || []);
+  });
+
+  fetchSalaryData();
+
+  // Mobile nav toggle
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mainNav').classList.toggle('active');
+  });
+
+</script>
+</body>
+</html>

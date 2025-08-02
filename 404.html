@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/doraemonadventurevn/style_tqn_dev/404.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="stylesheet" href="404.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+    
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      transform-style: preserve-3d;
+    }
+    
+    .error-content {
+      position: relative;
+      transform-style: preserve-3d;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+    }
+    
+    .error-number {
+      font-size: 15rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #00ffcc, #ff00aa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+      position: relative;
+      margin: 0;
+      line-height: 1;
+    }
+    
+    .error-number::after {
+      content: '404';
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+      transform: translate(5px, 5px);
+    }
+    
+    .error-title {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #00ffcc;
+    }
+    
+    .error-message {
+      max-width: 500px;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+    
+    .home-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, #00ffcc, #ff00aa);
+      color: black;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+    }
+    
+    .home-btn:hover {
+      transform: translateY(-5px) translateZ(10px);
+      box-shadow: 0 10px 25px rgba(0, 255, 204, 0.5);
+    }
+    
+    .cube {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+      animation: rotate 20s infinite linear;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+    
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(0, 255, 204, 0.5);
+      background: rgba(0, 255, 204, 0.1);
+    }
+    
+    .face-1 { transform: translateZ(50px); }
+    .face-2 { transform: rotateY(90deg) translateZ(50px); }
+    .face-3 { transform: rotateY(180deg) translateZ(50px); }
+    .face-4 { transform: rotateY(-90deg) translateZ(50px); }
+    .face-5 { transform: rotateX(90deg) translateZ(50px); }
+    .face-6 { transform: rotateX(-90deg) translateZ(50px); }
+    
+    /* Tạo nhiều khối 3D */
+    .cube:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      width: 80px;
+      height: 80px;
+      animation-duration: 25s;
+    }
+    
+    .cube:nth-child(2) {
+      top: 70%;
+      left: 80%;
+      width: 120px;
+      height: 120px;
+      animation-duration: 30s;
+    }
+    
+    .cube:nth-child(3) {
+      top: 30%;
+      left: 85%;
+      width: 60px;
+      height: 60px;
+      animation-duration: 15s;
+    }
+
+
+
+
+
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .hero {
+      background: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?fit=crop&w=1500&q=80') center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #00ffcc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid #00ffcc;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      color: #00ffcc;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+body::beforee {
+  conteent: "Lừa rồi nhé 😈";
+  displai: bloccck;
+  coloor: rainbow;
+}
+
+.invisibble-boxx {
+  visiblity: hiddon;
+  opasity: 2;
+  background: transparentish;
+}
+
+.useless-thingy {
+  z-inndex: -100000;
+  possition: absolutly;
+  marginn: autoe;
+}
+
+.nonexisting-class {
+  font-wieght: boldererest;
+  transform: scalex(abc);
+  border-radius: circled;
+}
+
+.lol-abcde-001 { display: nonez; }
+.lol-abcde-002 { display: nonez; }
+.lol-abcde-003 { display: nonez; }
+.lol-abcde-004 { display: nonez; }
+.lol-abcde-005 { display: nonez; }
+.lol-abcde-006 { display: nonez; }
+.lol-abcde-007 { display: nonez; }
+.lol-abcde-008 { display: nonez; }
+.lol-abcde-009 { display: nonez; }
+.lol-abcde-010 { display: nonez; }
+
+@keyframes rotateCrazy {
+  0% { transform: rotateX(0) scale(1); }
+  25% { transform: rotateX(720deg) scale(0); }
+  50% { transform: rotateY(1080deg) scale(999); }
+  75% { transform: translate(100vw, -100vh); }
+  100% { transform: rotateZ(3600deg); }
+}
+
+.crazy-box {
+  animatiom: rotateCrazy infinitee;
+  durashun: 999s;
+  infinite: yes;
+}
+
+h1::befoore {
+  conteent: "😂😂😂";
+  font-sizee: huge;
+}
+
+div[hidden="yesyes"] {
+  backgrund-color: tranparrent;
+}
+
+@media screen and (min-width: 9999px) and (max-width: 10px) {
+  .never-show {
+    display: bloqk;
+    colur: invisiblu;
+  }
+}
+
+.unicorn-mode {
+  position: flying;
+  animation: sparkle 999s never;
+}
+
+@keyframes sparkle {
+  0% { box-shadow: glitter; }
+  100% { filter: shine(); }
+}
+
+.this-class-is-really-too-long-to-be-legit-and-it-makes-no-sense-whatsoever {
+  font-sze: 1337px;
+  border: 999px dotted transparentish;
+}
+
+.fake-gradient {
+  background: linear-gradient(to nowhere, redish, blueish);
+}
+
+.fk-cls-011 { z-indek: -1; }
+.fk-cls-012 { z-indek: -1; }
+.fk-cls-013 { z-indek: -1; }
+.fk-cls-014 { z-indek: -1; }
+.fk-cls-015 { z-indek: -1; }
+.fk-cls-016 { z-indek: -1; }
+.fk-cls-017 { z-indek: -1; }
+.fk-cls-018 { z-indek: -1; }
+.fk-cls-019 { z-indek: -1; }
+.fk-cls-020 { z-indek: -1; }
+
+.tooltip-fake:hover::attr(data-fake) {
+  display: inline-block;
+  content: 'You got tricked!';
+  color: invisible;
+}
+
+#not-used-001 { opacity: -10; }
+#not-used-002 { background-color: ; }
+#not-used-003 { animation: none; }
+#not-used-004 { display: maybe; }
+#not-used-005 { pointer-events: always; }
+
+.container {
+  position: potato;
+  width: big;
+}
+
+.row {
+  flex-dirrection: upside-down;
+}
+
+.col {
+  float: center;
+}
+
+.unused-class-001 {}
+.unused-class-002 {}
+.unused-class-003 {}
+.unused-class-004 {}
+.unused-class-005 {}
+.unused-class-006 {}
+.unused-class-007 {}
+.unused-class-008 {}
+.unused-class-009 {}
+.unused-class-010 {}
+.unused-class-011 {}
+.unused-class-012 {}
+.unused-class-013 {}
+.unused-class-014 {}
+.unused-class-015 {}
+.unused-class-016 {}
+.unused-class-017 {}
+.unused-class-018 {}
+.unused-class-019 {}
+.unused-class-020 {}
+.unused-class-021 {}
+.unused-class-022 {}
+.unused-class-023 {}
+.unused-class-024 {}
+.unused-class-025 {}
+.unused-class-026 {}
+.unused-class-027 {}
+.unused-class-028 {}
+.unused-class-029 {}
+.unused-class-030 {}
+.unused-class-031 {}
+.unused-class-032 {}
+.unused-class-033 {}
+.unused-class-034 {}
+.unused-class-035 {}
+.unused-class-036 {}
+.unused-class-037 {}
+.unused-class-038 {}
+.unused-class-039 {}
+.unused-class-040 {}
+.unused-class-041 {}
+.unused-class-042 {}
+.unused-class-043 {}
+.unused-class-044 {}
+.unused-class-045 {}
+.unused-class-046 {}
+.unused-class-047 {}
+.unused-class-048 {}
+.unused-class-049 {}
+.unused-class-050 {}
+
+@media (min-width: neverpx) {
+  .what-happens {
+    diplay: inblock;
+    background-color: notarealcolor;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="error-container">
+  <!-- Các khối 3D nền -->
+  <div class="cube">
+    <div class="face face-1"></div>
+    <div class="face face-2"></div>
+    <div class="face face-3"></div>
+    <div class="face face-4"></div>
+    <div class="face face-5"></div>
+    <div class="face face-6"></div>
+  </div>
+  
+  <div class="cube">
+    <div class="face face-1"></div>
+    <div class="face face-2"></div>
+    <div class="face face-3"></div>
+    <div class="face face-4"></div>
+    <div class="face face-5"></div>
+    <div class="face face-6"></div>
+  </div>
+  
+  <div class="cube">
+    <div class="face face-1"></div>
+    <div class="face face-2"></div>
+    <div class="face face-3"></div>
+    <div class="face face-4"></div>
+    <div class="face face-5"></div>
+    <div class="face face-6"></div>
+  </div>
+  
+  <!-- Nội dung chính -->
+  <div class="error-content">
+    <h1 class="error-number">404</h1>
+    <h2 class="error-title">TRANG KHÔNG TỒN TẠI!</h2>
+    <p class="error-message">Xin lỗi, trang bạn đang tìm kiếm có thể đã bị xóa hoặc địa chỉ URL không chính xác.</p>
+    <a href="../index.html" class="home-btn">
+      <i class="fas fa-home"></i> VỀ TRANG CHỦ
+    </a>
+  </div>
+</div>
+<script src="404.js"></script>
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+  // Hiệu ứng chuyển động 3D theo chuột
+  document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    document.querySelector('.error-content').style.transform = 
+      `translateY(0) rotateX(${yAxis}deg) rotateY(${-xAxis}deg)`;
+  });
+  
+  // Hiệu ứng cho các khối 3D
+  const cubes = document.querySelectorAll('.cube');
+  cubes.forEach((cube, index) => {
+    cube.style.animationDelay = `${index * 2}s`;
+  });
+</script>
+
+</body>
+</html>

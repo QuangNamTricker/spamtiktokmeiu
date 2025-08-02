@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thống Kê - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+  </div>
+</header>
+
+<div class="stats-container">
+  <div class="stats-header">
+    <h1><i class="fas fa-chart-line"></i> THỐNG KÊ HOẠT ĐỘNG</h1>
+    <p id="lastUpdate">Cập nhật lần cuối: Đang tải...</p>
+  </div>
+  
+
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3><i class="fas fa-users"></i> Thành viên</h3>
+      <div class="value" id="totalMembers">0</div>
+      <p id="newMembers">+0 trong ngày</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-paper-plane"></i> Bài đăng</h3>
+      <div class="value" id="totalPosts">0</div>
+      <p id="todayPosts">0 bài hôm nay</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-money-bill-wave"></i> Tổng lương</h3>
+      <div class="value" id="totalSalary">0đ</div>
+      <p id="paidSalary">Đã thanh toán: 0đ</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-clock"></i> Hiệu suất</h3>
+      <div class="value" id="performance">0%</div>
+      <p>Tỉ lệ bài hợp lệ</p>
+    </div>
+  </div>
+    <h2 style="color: #00ffcc; margin-top: 40px; text-align: center;"><i class="fas fa-scroll"></i><a style="color: #00ffcc; margin-top: 40px; text-align: center;" href="../xep-hang/index.html">NHẤN VÀO ĐÂY ĐỂ XEM BẢNG XẾP HẠNG</a></h2>
+  <h2 style="color: #00ffcc; margin-top: 40px;"><i class="fas fa-chart-bar"></i> BIỂU ĐỒ THỐNG KÊ</h2>
+    <div class="chart-container">
+    <canvas id="activityChart"></canvas>
+  </div>
+  
+  <div class="chart-container">
+    <canvas id="earningsChart"></canvas>
+  </div>
+  
+  <h2 style="color: #00ffcc; margin-top: 40px;"><i class="fas fa-table"></i> DỮ LIỆU CHI TIẾT</h2>
+    <div class="time-selector">
+    <button class="time-btn active" data-period="today">Hôm nay</button>
+    <button class="time-btn" data-period="week">Tuần này</button>
+    <button class="time-btn" data-period="month">Tháng này</button>
+    <button class="time-btn" data-period="all">Tất cả</button>
+  </div>
+  <div id="dataTableContainer">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ngày</th>
+          <th>Tên thành viên</th>
+          <th>Số lượng</th>
+          <th>Đơn giá</th>
+          <th>Thành tiền</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody id="dataTableBody">
+        <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 Copyright By Từ Quang Nam. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script></script>
+<script src="script.js"></script>
+
+</body>
+</html> 
+

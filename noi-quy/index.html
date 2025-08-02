@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nội Quy - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .main-header {
+      background-color: #ff0050;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+      font-size: 1.8rem;
+    }
+    
+    .main-nav {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s;
+    }
+    
+    .main-nav a:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .rules-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    
+    .rules-header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ff0050;
+      padding-bottom: 20px;
+    }
+    
+    .rules-header h1 {
+      color: #ff0050;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .rules-header p {
+      color: #666;
+      margin-top: 10px;
+    }
+    
+    .important-note {
+      background-color: #fff8e6;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .important-note h3 {
+      margin-top: 0;
+      color: #ff9800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .rule-category {
+      margin-bottom: 25px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .rule-category h2 {
+      background-color: #ff0050;
+      color: white;
+      margin: 0;
+      padding: 15px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+    
+    .rule-category h2:hover {
+      background-color: #e00046;
+    }
+    
+    .rule-list {
+      padding: 20px;
+      /* background-color: #fafafa; */
+    }
+    
+    .rule-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .rule-list li:before {
+      content: "•";
+      color: #ff0050;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    .penalty {
+      background-color: #ffeeee;
+      border: 1px solid #ffcccc;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: #ff0050;
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #ff0050;
+        padding: 20px;
+        gap: 15px;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .rules-container {
+        margin: 20px 15px;
+        padding: 20px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<div class="rules-container">
+  <div class="rules-header">
+    <h1><i class="fas fa-gavel"></i> NỘI QUY CỘNG ĐỒNG</h1>
+    <p>Phiên bản cập nhật ngày 20/06/2025</p>
+  </div>
+  
+  <div class="important-note">
+    <h3><i class="fas fa-exclamation-triangle"></i> LƯU Ý QUAN TRỌNG</h3>
+    <p>Mọi thành viên vi phạm nội quy sẽ bị xử lý nghiêm minh, bao gồm cả khóa tài khoản vĩnh viễn và không được nhận lương.</p>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-check-circle"></i> NỘI QUY LÀM VIỆC</h2>
+    <div class="rule-list">
+      <li>THỜI GIAN LÀM VIỆC: 4H => 23H59</li>
+      <li>FULL MUA BÁN + FULL NỮ</li>
+      <li>TUỔI 25-45</li>
+      <li>NỘP COMENT + TCN (Tài khoản chính)</li>
+      <li>THẢ TIM + RÉP COMENT DƯỚI 3 TIM</li>
+      <li>FOLLOW TRÊN 40</li>
+      <li>RÉP DƯỚI 24H</li>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-ban"></i> ĐIỀU CẤM</h2>
+    <div class="rule-list">
+      <li>RÉP KHÁCH KHÔNG AVATAR + ẢO + DÂN TỘC</li>
+      <div class="penalty">
+        <strong>Mức phạt:</strong> Cảnh cáo lần 1, lần 2 trừ 50% lương, lần 3 ban vĩnh viễn
+      </div>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-money-bill-wave"></i> QUY ĐỊNH LƯƠNG</h2>
+    <div class="rule-list">
+      <li>LƯƠNG: 300Đ/1RK ( DO NHÓM MỚI HOẠT ĐỘNG NÊN CHỈ 300Đ, KHI NÀO NHÓM ỔN SẼ LÊN 400Đ)</li>
+      <li>TRỪ 50% LƯƠNG: RÉP ẢO + NAM</li>
+      <li>0 LƯƠNG: RÉP CHÈN + QUÁ 24H</li>
+      <li>Thanh toán 1 lần/ngày qua Momo/Bank</li>
+    </div>
+  </div>
+  
+  <div class="rule-category">
+    <h2 onclick="toggleCategory(this)"><i class="fas fa-money-bill-wave"></i> QUY ĐỊNH THƯỞNG</h2>
+    <div class="rule-list">
+      <li>Nếu ngày hôm đó trên 100 khách thì nhóm sẽ được thưởng 100k và tiền sẽ được gộp từ thứ 2 đến chủ nhật</li>
+      <li>Tiền thưởng sẽ được chia thành 2 phần: <strong>50% và 50%</strong></li>
+      <li>50% sẽ được làm mini game cho nhóm chơi và 50% còn lại sẽ thưởng cho 3 bạn làm nhiều nhất ( 25K - 15K - 10K )</li>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 Copyright By Từ Quang Nam. All rights reserved.</div>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script>
+  function toggleCategory(element) {
+    const ruleList = element.nextElementSibling;
+    ruleList.style.display = ruleList.style.display === 'none' ? 'block' : 'none';
+  }
+
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('active');
+  });
+
+  // Đóng menu khi click ra ngoài
+  document.addEventListener('click', function(event) {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('mobileMenuBtn');
+    
+    if (!nav.contains(event.target) && !btn.contains(event.target)) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+
+  // Hiệu ứng toggle category
+  function toggleCategory(element) {
+    const ruleList = element.nextElementSibling;
+    ruleList.style.maxHeight = ruleList.style.maxHeight ? null : ruleList.scrollHeight + "px";
+  }
+
+  // Mở tất cả category khi trang load
+  document.querySelectorAll('.rule-category h2').forEach(header => {
+    toggleCategory(header);
+  });
+
+</script>
+</body>
+</html>

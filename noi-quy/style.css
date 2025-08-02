@@ -1,0 +1,354 @@
+
+
+
+
+
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .hero {
+      background: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?fit=crop&w=1500&q=80') center/cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #00ffcc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid #00ffcc;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      color: #00ffcc;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Phần CSS chung giữ nguyên từ các trang trước */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* ... (Giữ nguyên phần header và footer giống các trang khác) ... */
+    
+    .rules-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .rules-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .rules-header h1 {
+      color: #00ffcc;
+      font-size: 2.5em;
+    }
+    
+    .rule-category {
+      margin-bottom: 30px;
+      border-left: 3px solid #00ffcc;
+      padding-left: 15px;
+    }
+    
+    .rule-category h2 {
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .rule-category h2:hover {
+      padding-left: 10px;
+    }
+    
+    .rule-category h2 i {
+      margin-right: 10px;
+    }
+    
+    .rule-list {
+      margin-top: 15px;
+      padding-left: 25px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    
+    .rule-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .rule-list li::before {
+      content: '•';
+      color: #00ffcc;
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    
+    .penalty {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      border-left: 3px solid red;
+    }
+    
+    .penalty strong {
+      color: #ff5555;
+    }
+    
+    .important-note {
+      background: rgba(0, 255, 204, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: center;
+      border: 1px dashed #00ffcc;
+    }
+    
+    @media (max-width: 768px) {
+      .rules-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .rules-header h1 {
+        font-size: 1.8em;
+      }
+    }

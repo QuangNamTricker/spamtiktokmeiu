@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Thành Viên - SPAM TIK TOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+    
+    .main-header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffcc;
+    }
+    
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #00ffcc;
+      transition: all 0.3s ease;
+    }
+    
+    .main-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+    .content-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    .page-title {
+      color: #00ffcc;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .data-table th, .data-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .data-table th {
+      background-color: rgba(0, 255, 204, 0.2);
+      color: #00ffcc;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+    }
+    
+    .data-table tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .stat-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1;
+      min-width: 200px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .stat-card h3 {
+      color: #00ffcc;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .view-details-btn {
+      color: #00ffcc;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .view-details-btn:hover {
+      text-decoration: underline;
+      color: #00e6b8;
+    }
+    
+    .search-filter-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .filter-box {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .search-box input, .filter-box select {
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      /* color: white; */
+      width: 100%;
+    }
+    
+    .search-box input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .filter-box select {
+      min-width: 150px;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .pagination button {
+      padding: 8px 15px;
+      background: rgba(0, 255, 204, 0.2);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .pagination button:hover {
+      background: rgba(0, 255, 204, 0.4);
+    }
+    
+    .pagination button.active {
+      background: #00ffcc;
+      color: #141e30;
+      font-weight: bold;
+    }
+    
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .member-details {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+    
+    .member-details.active {
+      display: block;
+    }
+    
+    .details-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .details-title {
+      color: #00ffcc;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    
+    .close-details {
+      background: none;
+      border: none;
+      color: #ff6b6b;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .details-table th, .details-table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .details-table th {
+      color: #00ffcc;
+    }
+    
+    .highlight {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      background: rgba(0, 255, 204, 0.2);
+      color: #00ffcc;
+    }
+    
+    .badge.top {
+      background: rgba(255, 215, 0, 0.2);
+      color: #ffd700;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0f2027, #203a43);
+      color: #aaa;
+      margin-top: 50px;
+    }
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #aaa;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00ffcc;
+    }
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .main-nav.active {
+        display: flex;
+      }
+      
+      .main-nav a {
+        padding: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      
+      .data-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+      }
+      
+      .stat-card {
+        width: 100%;
+      }
+      
+      .search-filter-container {
+        flex-direction: column;
+      }
+      
+      .filter-box {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-container">
+
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+
+  </div>
+</header>
+
+<div class="content-container">
+  <h1 class="page-title"><i class="fas fa-users"></i> DANH SÁCH THÀNH VIÊN</h1>
+  
+  <div class="stats-container">
+    <div class="stat-card">
+      <h3><i class="fas fa-user-friends"></i> TỔNG THÀNH VIÊN</h3>
+      <div class="stat-value" id="total-members">0</div>
+      <p>Người tham gia</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-star"></i> TOP THÀNH VIÊN</h3>
+      <div class="stat-value" id="top-member">-</div>
+      <p>Về số lượng</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-coins"></i> TỔNG LƯƠNG</h3>
+      <div class="stat-value" id="total-salary">0đ</div>
+      <p>Toàn bộ thành viên</p>
+    </div>
+    
+    <div class="stat-card">
+      <h3><i class="fas fa-calendar-alt"></i> NGÀY HOẠT ĐỘNG</h3>
+      <div class="stat-value" id="active-days">0</div>
+      <p>Ngày ghi nhận</p>
+    </div>
+  </div>
+  
+  <div class="search-filter-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm thành viên..."><br><br><br><br>
+    </div><br>
+    <div class="filter-box">
+      <select id="sortSelect">
+        <option value="name-asc">Tên A-Z</option>
+        <option value="name-desc">Tên Z-A</option>
+        <option value="quantity-desc">Số lượng giảm dần</option>
+        <option value="quantity-asc">Số lượng tăng dần</option>
+        <option value="salary-desc">Lương giảm dần</option>
+        <option value="salary-asc">Lương tăng dần</option>
+        <option value="days-desc">Ngày làm giảm dần</option>
+        <option value="days-asc">Ngày làm tăng dần</option>
+      </select>
+      <select id="filterSelect">
+        <option value="all">Tất cả thành viên</option>
+        <option value="top10">Top 10 thành viên</option>
+        <option value="active">Thành viên tích cực</option>
+        <option value="new">Thành viên mới</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên Thành Viên</th>
+          <th>Tổng Số Lượng</th>
+          <th>Tổng Lương</th>
+          <th>Số Ngày Làm</th>
+          <th>Ngày Gần Nhất</th>
+          <th>Chi Tiết</th>
+        </tr>
+      </thead>
+      <tbody id="membersTableBody">
+        <!-- Data will be loaded here from JSON -->
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="pagination" id="pagination">
+    <!-- Pagination will be generated here -->
+  </div>
+  
+  <div class="member-details" id="memberDetails">
+    <div class="details-header">
+      <h3 class="details-title" id="detailsTitle">Chi tiết thành viên</h3>
+      <button class="close-details" id="closeDetails">&times;</button>
+    </div>
+    <div id="detailsContent">
+      <!-- Member details will be loaded here -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 Copyright By Từ Quang Nam. All rights reserved.</div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="https://t.me/the_king19_04"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+
+  // Global variables
+  let membersData = [];
+  let filteredMembers = [];
+  const itemsPerPage = 10;
+  let currentPage = 1;
+
+  // Load data from JSON file
+  async function loadData() {
+    try {
+      const response = await fetch('../data/data.json');
+      if (!response.ok) {
+        throw new Error('Không thể tải dữ liệu');
+      }
+      const data = await response.json();
+      processData(data);
+    } catch (error) {
+      console.error('Lỗi khi tải dữ liệu:', error);
+      document.getElementById('membersTableBody').innerHTML = `
+        <tr>
+          <td colspan="7" style="text-align: center; color: #ff6b6b;">
+            <i class="fas fa-exclamation-triangle"></i> Không thể tải dữ liệu. Vui lòng thử lại sau.
+          </td>
+        </tr>
+      `;
+    }
+  }
+
+  // Process JSON data to calculate member statistics
+  function processData(data) {
+    const membersMap = new Map();
+    const activeDays = new Set();
+    
+    // Process each date in the data
+    Object.entries(data).forEach(([date, entries]) => {
+      activeDays.add(date);
+      
+      entries.forEach(entry => {
+        if (!membersMap.has(entry.name)) {
+          membersMap.set(entry.name, {
+            name: entry.name,
+            totalQuantity: 0,
+            totalSalary: 0,
+            workDays: 0,
+            lastDate: '',
+            dailyStats: []
+          });
+        }
+        
+        const member = membersMap.get(entry.name);
+        member.totalQuantity += entry.quantity;
+        member.totalSalary += entry.quantity * entry.unitPrice;
+        member.workDays += 1;
+        
+        // Update last date if current date is newer
+        const currentDate = new Date(date.split('/').reverse().join('/'));
+        const lastDate = member.lastDate ? new Date(member.lastDate.split('/').reverse().join('/')) : null;
+        
+        if (!lastDate || currentDate > lastDate) {
+          member.lastDate = date;
+        }
+        
+        // Add daily stats
+        member.dailyStats.push({
+          date: date,
+          quantity: entry.quantity,
+          salary: entry.quantity * entry.unitPrice
+        });
+      });
+    });
+    
+    // Convert map to array and sort by total quantity (descending)
+    membersData = Array.from(membersMap.values());
+    
+    // Update stats
+    updateStats(membersData, activeDays.size);
+    
+    // Apply initial filter and sort
+    filterAndSortMembers();
+  }
+
+  // Update statistics cards
+  function updateStats(members, daysCount) {
+    document.getElementById('total-members').textContent = members.length;
+    document.getElementById('active-days').textContent = daysCount;
+    
+    // Calculate total salary
+    const totalSalary = members.reduce((sum, member) => sum + member.totalSalary, 0);
+    document.getElementById('total-salary').textContent = formatCurrency(totalSalary) + 'đ';
+    
+    // Find top member
+    if (members.length > 0) {
+      const topMember = [...members].sort((a, b) => b.totalQuantity - a.totalQuantity)[0];
+      document.getElementById('top-member').textContent = topMember.name;
+    }
+  }
+
+  // Filter and sort members based on selected options
+  function filterAndSortMembers() {
+    const filterValue = document.getElementById('filterSelect').value;
+    const sortValue = document.getElementById('sortSelect').value;
+    
+    // Apply filter
+    switch (filterValue) {
+      case 'top10':
+        filteredMembers = [...membersData].sort((a, b) => b.totalQuantity - a.totalQuantity).slice(0, 10);
+        break;
+      case 'active':
+        // Active members are those who worked more than 3 days
+        filteredMembers = membersData.filter(member => member.workDays > 3);
+        break;
+      case 'new':
+        // New members are those who worked only 1 day
+        filteredMembers = membersData.filter(member => member.workDays === 1);
+        break;
+      default:
+        filteredMembers = [...membersData];
+    }
+    
+    // Apply sort
+    switch (sortValue) {
+      case 'name-asc':
+        filteredMembers.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'name-desc':
+        filteredMembers.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'quantity-desc':
+        case 'top10': // Keep top10 order
+        if (filterValue !== 'top10') {
+          filteredMembers.sort((a, b) => b.totalQuantity - a.totalQuantity);
+        }
+        break;
+      case 'quantity-asc':
+        filteredMembers.sort((a, b) => a.totalQuantity - b.totalQuantity);
+        break;
+      case 'salary-desc':
+        filteredMembers.sort((a, b) => b.totalSalary - a.totalSalary);
+        break;
+      case 'salary-asc':
+        filteredMembers.sort((a, b) => a.totalSalary - b.totalSalary);
+        break;
+      case 'days-desc':
+        filteredMembers.sort((a, b) => b.workDays - a.workDays);
+        break;
+      case 'days-asc':
+        filteredMembers.sort((a, b) => a.workDays - b.workDays);
+        break;
+    }
+    
+    // Reset to first page
+    currentPage = 1;
+    
+    // Display members
+    displayMembers();
+    setupPagination();
+  }
+
+  // Display members in table with pagination
+  function displayMembers() {
+    const tableBody = document.getElementById('membersTableBody');
+    tableBody.innerHTML = '';
+    
+    if (filteredMembers.length === 0) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="7" style="text-align: center;">
+            <i class="fas fa-info-circle"></i> Không tìm thấy thành viên phù hợp
+          </td>
+        </tr>
+      `;
+      return;
+    }
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, filteredMembers.length);
+    
+    for (let i = startIndex; i < endIndex; i++) {
+      const member = filteredMembers[i];
+      const row = document.createElement('tr');
+      
+      // Highlight top 3 members
+      const isTop3 = i < 3 && document.getElementById('filterSelect').value !== 'top10' && 
+                    document.getElementById('sortSelect').value === 'quantity-desc';
+      
+      row.innerHTML = `
+        <td>${i + 1}</td>
+        <td>${member.name} ${isTop3 ? '<span class="badge top">TOP</span>' : ''}</td>
+        <td class="${isTop3 ? 'highlight' : ''}">${member.totalQuantity}</td>
+        <td>${formatCurrency(member.totalSalary)}đ</td>
+        <td>${member.workDays}</td>
+        <td>${member.lastDate}</td>
+        <td>
+          <a class="view-details-btn" onclick="showMemberDetails('${member.name}')">
+            <i class="fas fa-eye"></i> Xem chi tiết
+          </a>
+        </td>
+      `;
+      
+      tableBody.appendChild(row);
+    }
+  }
+
+  // Setup pagination
+  function setupPagination() {
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = '';
+    
+    const pageCount = Math.ceil(filteredMembers.length / itemsPerPage);
+    
+    if (pageCount <= 1) return;
+    
+    // Previous button
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prevButton.disabled = currentPage === 1;
+    prevButton.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        displayMembers();
+        setupPagination();
+      }
+    });
+    paginationDiv.appendChild(prevButton);
+    
+    // Page buttons
+    const maxVisiblePages = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(pageCount, startPage + maxVisiblePages - 1);
+    
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+    
+    if (startPage > 1) {
+      const firstButton = document.createElement('button');
+      firstButton.textContent = '1';
+      firstButton.addEventListener('click', () => {
+        currentPage = 1;
+        displayMembers();
+        setupPagination();
+      });
+      paginationDiv.appendChild(firstButton);
+      
+      if (startPage > 2) {
+        const ellipsis = document.createElement('span');
+        ellipsis.textContent = '...';
+        paginationDiv.appendChild(ellipsis);
+      }
+    }
+    
+    for (let i = startPage; i <= endPage; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i;
+      pageButton.className = i === currentPage ? 'active' : '';
+      pageButton.addEventListener('click', () => {
+        currentPage = i;
+        displayMembers();
+        setupPagination();
+      });
+      paginationDiv.appendChild(pageButton);
+    }
+    
+    if (endPage < pageCount) {
+      if (endPage < pageCount - 1) {
+        const ellipsis = document.createElement('span');
+        ellipsis.textContent = '...';
+        paginationDiv.appendChild(ellipsis);
+      }
+      
+      const lastButton = document.createElement('button');
+      lastButton.textContent = pageCount;
+      lastButton.addEventListener('click', () => {
+        currentPage = pageCount;
+        displayMembers();
+        setupPagination();
+      });
+      paginationDiv.appendChild(lastButton);
+    }
+    
+    // Next button
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    nextButton.disabled = currentPage === pageCount;
+    nextButton.addEventListener('click', () => {
+      if (currentPage < pageCount) {
+        currentPage++;
+        displayMembers();
+        setupPagination();
+      }
+    });
+    paginationDiv.appendChild(nextButton);
+  }
+
+  // Show member details
+  function showMemberDetails(memberName) {
+    const member = membersData.find(m => m.name === memberName);
+    if (!member) return;
+    
+    const detailsTitle = document.getElementById('detailsTitle');
+    const detailsContent = document.getElementById('detailsContent');
+    const memberDetails = document.getElementById('memberDetails');
+    
+    detailsTitle.textContent = `Chi tiết: ${member.name}`;
+    
+    // Calculate average per day
+    const avgQuantity = Math.round(member.totalQuantity / member.workDays);
+    const avgSalary = Math.round(member.totalSalary / member.workDays);
+    
+    // Find best and worst day
+    let bestDay = { quantity: 0, date: '', salary: 0 };
+    let worstDay = { quantity: Infinity, date: '', salary: Infinity };
+    
+    member.dailyStats.forEach(day => {
+      if (day.quantity > bestDay.quantity) {
+        bestDay = day;
+      }
+      if (day.quantity < worstDay.quantity) {
+        worstDay = day;
+      }
+    });
+    
+    // Create details HTML
+    detailsContent.innerHTML = `
+      <table class="details-table">
+        <tr>
+          <th>Tổng số lượng:</th>
+          <td>${member.totalQuantity}</td>
+        </tr>
+        <tr>
+          <th>Tổng lương:</th>
+          <td>${formatCurrency(member.totalSalary)}đ</td>
+        </tr>
+        <tr>
+          <th>Số ngày làm:</th>
+          <td>${member.workDays}</td>
+        </tr>
+        <tr>
+          <th>Ngày gần nhất:</th>
+          <td>${member.lastDate}</td>
+        </tr>
+        <tr>
+          <th>Trung bình mỗi ngày:</th>
+          <td>${avgQuantity} sp (${formatCurrency(avgSalary)}đ)</td>
+        </tr>
+        <tr>
+          <th>Ngày tốt nhất:</th>
+          <td>${bestDay.date}: ${bestDay.quantity} sp (${formatCurrency(bestDay.salary)}đ)</td>
+        </tr>
+        <tr>
+          <th>Ngày thấp nhất:</th>
+          <td>${worstDay.date}: ${worstDay.quantity} sp (${formatCurrency(worstDay.salary)}đ)</td>
+        </tr>
+      </table>
+      
+      <h4 style="margin-top: 20px; color: #00ffcc;">Lịch sử làm việc:</h4>
+      <div style="max-height: 300px; overflow-y: auto;">
+        <table class="details-table">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Số lượng</th>
+              <th>Lương</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${member.dailyStats.sort((a, b) => {
+              const dateA = new Date(a.date.split('/').reverse().join('/'));
+              const dateB = new Date(b.date.split('/').reverse().join('/'));
+              return dateB - dateA;
+            }).map(day => `
+              <tr>
+                <td>${day.date}</td>
+                <td>${day.quantity}</td>
+                <td>${formatCurrency(day.salary)}đ</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+    
+    memberDetails.classList.add('active');
+  }
+
+  // Close member details
+  document.getElementById('closeDetails').addEventListener('click', () => {
+    document.getElementById('memberDetails').classList.remove('active');
+  });
+
+  // Format currency with commas
+  function formatCurrency(amount) {
+    return new Intl.NumberFormat('vi-VN').format(amount);
+  }
+
+  // Search functionality
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    if (searchTerm.trim() === '') {
+      filterAndSortMembers();
+      return;
+    }
+    
+    filteredMembers = membersData.filter(member => 
+      member.name.toLowerCase().includes(searchTerm)
+      .sort((a, b) => b.totalQuantity - a.totalQuantity));
+    
+    currentPage = 1;
+    displayMembers();
+    setupPagination();
+  });
+
+  // Event listeners for filter and sort changes
+  document.getElementById('filterSelect').addEventListener('change', filterAndSortMembers);
+  document.getElementById('sortSelect').addEventListener('change', filterAndSortMembers);
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+  });
+</script>
+</body>
+</html>

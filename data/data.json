@@ -14,35 +14,35 @@
         { "name": "Trình Chiến", "quantity": 235, "unitPrice": 300, "status": "Đã thanh toán" }
     ],
       "02/08/2025": [
-          { "name": "Anh Vu", "quantity": 135, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Baby Shark", "quantity": 218, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Banana", "quantity": 242, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Bảo Ngọc", "quantity": 627, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Khánh", "quantity": 157, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Nam Ái", "quantity": 230, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Sang", "quantity": 62, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Sáng", "quantity": 823, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Tho", "quantity": 375, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Trang", "quantity": 443, "unitPrice": 300, "status": "Chờ xử lý" },
-          { "name": "Trang Đangiu", "quantity": 130, "unitPrice": 300, "status": "" },
-          { "name": "Trình Chiến", "quantity": 260, "unitPrice": 300, "status": "Chờ xử lý" }
+          { "name": "Anh Vu", "quantity": 135, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Baby Shark", "quantity": 218, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Banana", "quantity": 242, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Bảo Ngọc", "quantity": 627, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Khánh", "quantity": 157, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Nam Ái", "quantity": 230, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Sang", "quantity": 62, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Sáng", "quantity": 823, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Tho", "quantity": 375, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Trang", "quantity": 443, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Trang Đangiu", "quantity": 130, "unitPrice": 300, "status": "Đã thanh toán" },
+          { "name": "Trình Chiến", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" }
       ],
   
       
           "03/08/2025": [
-              { "name": "Anh Vu", "quantity": 273, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Banana", "quantity": 181, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Bảo Ngọc", "quantity": 1082, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "HH", "quantity": 149, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Hiền", "quantity": 416, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Lz", "quantity": 420, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Nam Ái", "quantity": 260, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Nhẫn", "quantity": 38, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Sáng", "quantity": 1566, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Tho", "quantity": 127, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Trang", "quantity": 540, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Trang Đangiu", "quantity": 127, "unitPrice": 300, "status": "Chờ xử lý" },
-              { "name": "Trình Chiến", "quantity": 255, "unitPrice": 300, "status": "Chờ xử lý" }
+              { "name": "Anh Vu", "quantity": 273, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Banana", "quantity": 181, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Bảo Ngọc", "quantity": 1082, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "HH", "quantity": 149, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Hiền", "quantity": 416, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Lz", "quantity": 420, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Nam Ái", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Nhẫn", "quantity": 38, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Sáng", "quantity": 1566, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Tho", "quantity": 127, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Trang", "quantity": 540, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Trang Đangiu", "quantity": 127, "unitPrice": 300, "status": "Đã thanh toán" },
+              { "name": "Trình Chiến", "quantity": 255, "unitPrice": 300, "status": "Đã thanh toán" }
           ]
       
   

@@ -62,7 +62,7 @@
         { "name": "Tho", "quantity": 520, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "TIGER BABY", "quantity": 431, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Trang", "quantity": 410, "unitPrice": 300, "status": "Đã thanh toán" },
-        { "name": "Trang Đangiu", "quantity": 387, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Trang Đangiu", "quantity": 387, "unitPrice": 300, "status": "Đã thanh toán" },
         { "name": "Trình Chiến", "quantity": 260, "unitPrice": 300, "status": "Đã thanh toán" }
     ]
 

@@ -82,7 +82,22 @@
         { "name": "Trang", "quantity": 420, "unitPrice": 300, "status": "Chờ xử lý" },
         { "name": "Trang Đangiu", "quantity": 130, "unitPrice": 300, "status": "Chờ xử lý" },
         { "name": "Trình Chiến", "quantity": 131, "unitPrice": 300, "status": "Chờ xử lý" }
+    ],
+    
+    "06/08/2025": [
+        { "name": "Baby Shark", "quantity": 103, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Banana", "quantity": 103, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Gấu", "quantity": 131, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "HH", "quantity": 148, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Hùng Chollay", "quantity": 265, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Khanh Lam", "quantity": 72, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Lz", "quantity": 157, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Nam Ái", "quantity": 132, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Tho", "quantity": 263, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Trang", "quantity": 107, "unitPrice": 300, "status": "Chờ xử lý" },
+        { "name": "Trang Đangiu", "quantity": 132, "unitPrice": 300, "status": "Chờ xử lý" }
     ]
+
 
 
       
